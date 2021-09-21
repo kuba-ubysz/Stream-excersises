@@ -18,7 +18,7 @@ public class RaceParticipation {
         raceEventSet.forEach(raceEvent -> raceEvent.setDriver(driver));
     }
 
-    public RaceParticipation( RacingDriver driver, RacingTeam racingTeam, int position, Set<RaceEvent> raceEventSet) {
+    public RaceParticipation(RacingDriver driver, RacingTeam racingTeam, int position, Set<RaceEvent> raceEventSet) {
         this.driver = driver;
         this.racingTeam = racingTeam;
         this.position = position;
@@ -29,6 +29,10 @@ public class RaceParticipation {
 
     public Race getRace() {
         return race;
+    }
+
+    public void setRace(Race race) {
+        this.race = race;
     }
 
     public RacingDriver getDriver() {
@@ -56,36 +60,38 @@ public class RaceParticipation {
 
 
         switch (position) {
-            case 1 -> points += 25;
-            case 2 -> points += 18;
-            case 3 -> points += 15;
-            case 4 -> points += 12;
-            case 5 -> points += 10;
-            case 6 -> points += 8;
-            case 7 -> points += 6;
-            case 8 -> points += 4;
-            case 9 -> points += 2;
-            case 10 -> points += 1;
+            case 1:
+                points += 25;
+                break;
+            case 2:
+                points += 18;
+                break;
+            case 3:
+                points += 15;
+                break;
+            case 4:
+                points += 12;
+                break;
+            case 5:
+                points += 10;
+                break;
+            case 6:
+                points += 8;
+                break;
+            case 7:
+                points += 6;
+                break;
+            case 8:
+                points += 4;
+                break;
+            case 9:
+                points += 2;
+                break;
+            case 10:
+                points += 1;
+                break;
         }
 
         return points;
     }
-
-    public void setRace(Race race) {
-        this.race = race;
-    }
 }
-
-
-//1: 25
-//2: 18
-//3: 15
-//4: 12
-//5: 10
-//6: 8
-//7: 6
-//8: 4
-//9: 2
-//10: 1
-//11+: 0
-// +1 pkt za fastest lap

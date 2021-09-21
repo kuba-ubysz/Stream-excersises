@@ -518,7 +518,7 @@ class RaceChampionshipTest {
     }
 
     @Test
-    public void shouldGetBestResultForDriver() {
+    public void shouldGetBestResultForDriver1() {
         //given
         var testedDriver = georgeRussell;
         //when
@@ -526,8 +526,29 @@ class RaceChampionshipTest {
         //then
         Assertions.assertEquals(9, bestResultForDriver.getPosition());
         Assertions.assertEquals(sakhirGP, bestResultForDriver.getRace());
-
     }
+
+
+    @Test
+    public void shouldGetBestResultForDriver2() {
+        //given
+        var testedDriver = nicholasLatifi;
+        //when
+        RaceParticipation bestResultForDriver = formula1championshipSeason2020.getBestResultForDriver(testedDriver);
+        //then
+        Assertions.assertEquals(11, bestResultForDriver.getPosition());
+    }
+
+    @Test
+    public void shouldGetBestResultForDriver3() {
+        //given
+        var testedDriver = sergioPerez;
+        //when
+        RaceParticipation bestResultForDriver = formula1championshipSeason2020.getBestResultForDriver(testedDriver);
+        //then
+        Assertions.assertEquals(1, bestResultForDriver.getPosition());
+    }
+
 
     @Test
     public void shouldGetWorstResultForDriver() {
